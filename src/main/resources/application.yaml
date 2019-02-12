@@ -1,0 +1,11 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health
+
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: app
