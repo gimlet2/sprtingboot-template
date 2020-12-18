@@ -6,7 +6,7 @@ plugins {
 	id("org.jetbrains.kotlin.jvm") version "1.3.31"
 	id("org.jetbrains.kotlin.plugin.spring") version "1.3.31"
 	id("org.springframework.boot") version "2.1.5.RELEASE"
-	id("com.gorylenko.gradle-git-properties") version "2.0.0"
+	id("com.gorylenko.gradle-git-properties") version "2.2.4"
 }
 
 
