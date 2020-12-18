@@ -4,7 +4,7 @@ import org.springframework.boot.gradle.tasks.bundling.BootJar
 plugins {
 	id("io.spring.dependency-management") version "1.0.10.RELEASE"
 	id("org.jetbrains.kotlin.jvm") version "1.4.21"
-	id("org.jetbrains.kotlin.plugin.spring") version "1.3.31"
+	id("org.jetbrains.kotlin.plugin.spring") version "1.4.21"
 	id("org.springframework.boot") version "2.1.5.RELEASE"
 	id("com.gorylenko.gradle-git-properties") version "2.2.4"
 }
