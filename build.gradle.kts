@@ -43,6 +43,15 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
+	testImplementation(platform("org.junit:junit-bom:5.7.0"))
+	testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+tasks.test {
+	useJUnitPlatform()
+	testLogging {
+		events("passed", "skipped", "failed")
+	}
 }
 
 tasks.withType<KotlinCompile> {
