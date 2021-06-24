@@ -4,7 +4,7 @@ import org.springframework.boot.gradle.tasks.bundling.BootJar
 plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	id("org.jetbrains.kotlin.jvm") version "1.4.31"
-	id("org.jetbrains.kotlin.plugin.spring") version "1.4.31"
+	id("org.jetbrains.kotlin.plugin.spring") version "1.5.20"
 	id("org.springframework.boot") version "2.4.3"
 	id("com.gorylenko.gradle-git-properties") version "2.2.4"
 }
@@ -43,7 +43,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
-	testImplementation(platform("org.junit:junit-bom:5.7.1"))
+	testImplementation(platform("org.junit:junit-bom:5.7.2"))
 	testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
