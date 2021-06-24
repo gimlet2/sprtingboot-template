@@ -5,7 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	id("org.jetbrains.kotlin.jvm") version "1.4.31"
 	id("org.jetbrains.kotlin.plugin.spring") version "1.5.20"
-	id("org.springframework.boot") version "2.4.3"
+	id("org.springframework.boot") version "2.5.1"
 	id("com.gorylenko.gradle-git-properties") version "2.2.4"
 }
 
