@@ -5,7 +5,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	id("org.jetbrains.kotlin.jvm") version "1.4.31"
 	id("org.jetbrains.kotlin.plugin.spring") version "1.5.20"
-	id("org.springframework.boot") version "2.4.3"
+	id("org.springframework.boot") version "2.5.3"
 	id("com.gorylenko.gradle-git-properties") version "2.2.4"
 }
 
@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-	implementation("ch.qos.logback:logback-classic:1.2.3")
+	implementation("ch.qos.logback:logback-classic:1.2.5")
 	implementation("ch.qos.logback:logback-core:1.2.3")
 	implementation("net.logstash.logback:logstash-logback-encoder:6.6")
 	implementation("io.micrometer:micrometer-registry-prometheus:1.6.4")
