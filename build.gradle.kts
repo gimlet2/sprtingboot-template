@@ -33,7 +33,7 @@ repositories {
 
 dependencies {
 	implementation("ch.qos.logback:logback-classic:1.2.5")
-	implementation("ch.qos.logback:logback-core:1.2.5")
+	implementation("ch.qos.logback:logback-core:1.2.8")
 	implementation("net.logstash.logback:logstash-logback-encoder:6.6")
 	implementation("io.micrometer:micrometer-registry-prometheus:1.7.3")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
