@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-	implementation("ch.qos.logback:logback-classic:1.2.5")
+	implementation("ch.qos.logback:logback-classic:1.2.10")
 	implementation("ch.qos.logback:logback-core:1.2.5")
 	implementation("net.logstash.logback:logstash-logback-encoder:6.6")
 	implementation("io.micrometer:micrometer-registry-prometheus:1.7.3")
