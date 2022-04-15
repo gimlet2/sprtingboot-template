@@ -34,7 +34,7 @@ jobs:
   merge:
     name: "Merge"
     runs-on: "ubuntu-latest"
-    if: job.status == 'success'
+    if: ${{ success() }}
     steps:
       - name: "Merge pull request"
         uses: "actions/github-script@v5"
