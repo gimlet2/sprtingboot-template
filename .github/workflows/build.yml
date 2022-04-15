@@ -34,9 +34,7 @@ jobs:
   merge:
     name: "Merge"
     runs-on: "ubuntu-latest"
-    if: >
-      github.event.workflow_run.event == 'pull_request' &&
-      github.event.workflow_run.conclusion == 'success'
+    if: job.status == 'success'
     steps:
       - name: "Merge pull request"
         uses: "actions/github-script@v5"
