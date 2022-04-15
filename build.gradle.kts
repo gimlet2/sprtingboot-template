@@ -34,7 +34,7 @@ repositories {
 dependencies {
 	implementation("ch.qos.logback:logback-classic:1.2.11")
 	implementation("ch.qos.logback:logback-core:1.2.11")
-	implementation("net.logstash.logback:logstash-logback-encoder:6.6")
+	implementation("net.logstash.logback:logstash-logback-encoder:7.1.1")
 	implementation("io.micrometer:micrometer-registry-prometheus:1.8.5")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
