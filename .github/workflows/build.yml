@@ -27,7 +27,30 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v1.4.3
         with:
-          java-version: 15
+          java-version: 17
       # Runs a single command using the runners shell
       - name: Build and test
         run: ./gradlew build
+  merge:
+    name: "Merge"
+    runs-on: "ubuntu-latest"
+    if: >
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.actor == 'dependabot[bot]'
+    steps:
+      - name: "Merge pull request"
+        uses: "actions/github-script@v5"
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          script: |
+            const pullRequest = context.payload.workflow_run.pull_requests[0]
+            const repository = context.repo
+
+            await github.rest.pulls.merge({
+              merge_method: "merge",
+              owner: repository.owner,
+              pull_number: pullRequest.number,
+              repo: repository.repo,
+            })
+
