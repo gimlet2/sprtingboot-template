@@ -2,24 +2,25 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
-	id("io.spring.dependency-management") version "1.0.11.RELEASE"
-	id("org.jetbrains.kotlin.jvm") version "1.5.31"
-	id("org.jetbrains.kotlin.plugin.spring") version "1.5.31"
-	id("org.springframework.boot") version "2.6.6"
-	id("com.gorylenko.gradle-git-properties") version "2.3.1"
+	id("io.spring.dependency-management") version "1.1.4"
+	id("org.graalvm.buildtools.native") version "0.10.1"
+	id("org.springframework.boot") version "3.2.4"
+	id("com.gorylenko.gradle-git-properties") version "2.4.1"
+	kotlin("jvm") version "1.9.22"
+	kotlin("plugin.spring") version "1.9.22"
 }
 
 
 group = "com.restmonkeys"
 version = "0.0.1-SNAPSHOT"
-val bootJar: BootJar by tasks
-bootJar.apply {
-	archiveName = "app.jar"
+
+tasks.named<BootJar>("bootJar") {
+	archiveFileName.set("app.jar")
 }
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_1_8
-	targetCompatibility = JavaVersion.VERSION_1_8
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 springBoot {
@@ -32,10 +33,10 @@ repositories {
 }
 
 dependencies {
-	implementation("ch.qos.logback:logback-classic:1.2.11")
-	implementation("ch.qos.logback:logback-core:1.2.11")
-	implementation("net.logstash.logback:logstash-logback-encoder:6.6")
-	implementation("io.micrometer:micrometer-registry-prometheus:1.8.5")
+	implementation("ch.qos.logback:logback-classic:1.5.3")
+	implementation("ch.qos.logback:logback-core:1.5.3")
+	implementation("net.logstash.logback:logstash-logback-encoder:7.4")
+	implementation("io.micrometer:micrometer-registry-prometheus:1.12.5")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -43,7 +44,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
-	testImplementation(platform("org.junit:junit-bom:5.8.2"))
+	testImplementation(platform("org.junit:junit-bom:5.10.2"))
 	testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
@@ -56,7 +57,8 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
-		languageVersion = "1.3"
-		jvmTarget = "1.8"
+		freeCompilerArgs = listOf("-Xjsr305=strict")
+		languageVersion = "1.8"
+		jvmTarget = "21"
 	}
 }
