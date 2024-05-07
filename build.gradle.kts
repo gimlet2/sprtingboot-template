@@ -7,7 +7,7 @@ plugins {
 	id("org.springframework.boot") version "3.2.4"
 	id("com.gorylenko.gradle-git-properties") version "2.4.1"
 	kotlin("jvm") version "1.9.22"
-	kotlin("plugin.spring") version "1.9.22"
+	kotlin("plugin.spring") version "1.9.24"
 }
 
 
